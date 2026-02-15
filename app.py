@@ -1,13 +1,16 @@
 import streamlit as st
 
 pg_intro = st.Page('intro.py', title='Introducción')
-pg_eda_intro = st.Page('seccion_eda/introduccion.py', title='Primeros Pasos')
+
+# Paginas EDA
+pg_eda_intro = st.Page('seccion_eda/intro_eda.py', title='Primeros Pasos')
+pg_eda_basica = st.Page('seccion_eda/estadisticos_basicos.py', title='Información Básica')
 
 navigation_env = st.navigation(
     {
         '''''': [pg_intro],
-        '''EDA''': [pg_eda_intro]
+        '''EDA''': [pg_eda_intro, pg_eda_basica]
     }
 )
 
-pg_intro.run()
+navigation_env.run()
